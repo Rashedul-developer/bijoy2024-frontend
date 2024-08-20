@@ -8,6 +8,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from 'yup';
 import { useRouter } from "next/navigation";
 import { Card } from "antd";
+import GoogleButton from "@/components/utils/button/GoogleButton";
 
 export default function Login() {
     const router = useRouter();
@@ -61,6 +62,8 @@ export default function Login() {
                                     <Button isPrimary={true} fullWidth={true} type="submit" disable={isSubmitting}>
                                         {isSubmitting ? 'Submitting...' : 'Sign In'}
                                     </Button>
+                                    <h3 className="text-center mb-3">OR</h3>
+                                    <GoogleButton />
 
                                     <p className="mt-10 text-center text-sm text-gray-500">
                                         Not a member?{' '}
@@ -68,6 +71,8 @@ export default function Login() {
                                             Sign Up now
                                         </Link>
                                     </p>
+
+
                                 </div>
                             </div>
                         </Card>
